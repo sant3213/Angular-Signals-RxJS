@@ -1,0 +1,31 @@
+<div class="car-cost-calculator">
+  <h1>Car Ownership Cost Calculator</h1>
+
+  <label for="car-price">Car Price:</label>
+  <input
+    id="car-price"
+    type="number"
+    [ngModel]="carPrice()"
+    (ngModelChange)="updateCarPrice($event)"
+  />
+
+  <label for="years-of-ownership">Years of Ownership:</label>
+  <input
+    id="years-of-ownership"
+    type="number"
+    [ngModel]="yearsOfOwnership()"
+    (ngModelChange)="updateYearsOfOwnership($event)"
+  />
+
+  <label for="maintenance-cost">Maintenance Cost per Year:</label>
+  <input
+    id="maintenance-cost"
+    type="number"
+    [ngModel]="maintenanceCostPerYear()"
+    (ngModelChange)="updateMaintenanceCostPerYear($event)"
+  />
+
+  <div class="cost-display">
+    <p>Total Ownership Cost: ${{ totalOwnershipCost() }}</p>
+  </div>
+</div>

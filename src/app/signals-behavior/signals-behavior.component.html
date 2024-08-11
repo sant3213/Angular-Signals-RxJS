@@ -1,0 +1,17 @@
+<div>
+  <h2>Product Selection</h2>
+  <ul>
+    <li *ngFor="let car of availableCars()">
+      <button (click)="onCarSelected(car.id)">
+        {{ car.name }}
+      </button>
+    </li>
+  </ul>
+
+  <h3>Selected Product</h3>
+  <p *ngIf="selectedCar()">Product Name: {{ selectedCar()?.name }}</p>
+  <p *ngIf="selectedCar()">Price: ${{ selectedCar()?.price }}</p>
+
+  <h3>Stock Level</h3>
+  <p>Current Stock: {{ carPriceA() }}</p>
+</div>
